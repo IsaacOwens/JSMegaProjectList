@@ -2,14 +2,16 @@
 <html>
 <font face="verdana">
 <head>
-<title>Test</title>
+<title>Mega Project List in JS</title>
 </head>
 <!-- Started on 5/20/2014 by Isaac Owens -->
 <body>
 <center>
 <h1>Mega Project List in JS</h1>
 <h3>Based on <a href="https://github.com/karan/Projects">Karan Goel's Mega Project List</a></h3>
+
 <button onclick="testAlert()">Test JS</button>
+
 </center>
 
 <!-------------NUMBERS------------->
@@ -18,8 +20,6 @@
 <form>
 <input type="Number" id="piInput"></input>
 </form>
-<button id="piCountSubmit">Show pi to Nth number</button>
-<br>
 <textarea cols="60" rows="3" id="piOutput" readonly></textarea>
 
 
@@ -27,10 +27,26 @@
 <form>
 <input type="Number" id="eInput"></input>
 </form>
-<button id="eCountSubmit">Show e to Nth number</button>
-<br>
 <textarea cols="60" rows="3" id="eOutput" readonly></textarea>
 
+
+<h4>Display Fibonacci sequence up to the Nth number</h4>
+<form>
+<input type="Number" id="fibInput"></input>
+</form>
+<textarea cols="60" rows="3" id="fibOutput" readonly></textarea>
+
+
+<h4>Find all prime factors in a number</h4>
+<form>
+<input type="Number" id="primeInput"></input>
+</form>
+<textarea cols="60" rows="3" id="primeOutput" readonly></textarea>
+
+
+<h4>Find the next prime number</h4>
+<button id="nextPrimeButton">Next prime number</button>
+<input type="tel" id="nextPrimeOutput" value = 2 readonly></input>
 
 </body>
 
