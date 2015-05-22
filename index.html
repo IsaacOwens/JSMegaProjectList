@@ -48,6 +48,31 @@
 <button id="nextPrimeButton">Next prime number</button>
 <input type="tel" id="nextPrimeOutput" value = 2 readonly></input>
 
+<h4>Find Cost of Tile to Cover W x H Floor</h4>
+<form>
+<text>Tile cost (per square foot): &#36;</text><input type="Number" id="tileCostInput"></input>
+<br>
+<text>Width (per foot): </text><input type="Number" id="tileYInput"></input>
+<br>
+<text>Height (per foot): </text><input type="Number" id="tileXInput"></input>
+</form>
+<button id="tileSubmitButton">Find Cost</button>
+<br>
+<text>Cost: $</text><text value="" id="tileOutput"></textarea>
+
+
+<h4>Mortgage Calculator</h4>
+<form>
+<text>Mortgage amount: $</text><input type="Number" id="mortgageAmount"></input>
+<br>
+<text>Interest rate: </text><input type="Number" id="mortgageInterest">%</input>
+<br>
+<text>Mortgage term (years): </text><input type="Number" id="mortgageTerm"></input>
+</form>
+<button id="mortgageSubmit">Calculate</button>
+<br>
+<text>Monthly Cost: $</text><text value="" id="mortgageOutput"></textarea>
+
 </body>
 
 <script src="js/jsFunctions.js"></script>

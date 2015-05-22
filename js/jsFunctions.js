@@ -145,3 +145,43 @@ function isPrime(n)
  }
  return true;
 }
+
+/*Find Cost of Tile to Cover W x H Floor*/
+var tileCostInput = document.getElementById("tileCostInput");
+var tileYInput = document.getElementById("tileYInput");
+var tileXInput = document.getElementById("tileXInput");
+var tileSubmitButton = document.getElementById("tileSubmitButton");
+var tileOutput = document.getElementById("tileOutput");
+
+tileSubmitButton.onclick = function tileCost()
+{
+	if (tileCostInput.value < 0 || tileYInput.value < 0 || tileXInput.value < 0)
+	{
+		alert("All values must be greater than 0");
+	}
+	else
+	{
+		tileOutput.innerHTML = (tileCostInput.value * tileYInput.value * tileXInput.value).toFixed(2);
+	}
+};
+
+/*Mortgage Calculator*/
+var mortgageAmount = document.getElementById("mortgageAmount");
+var mortgageInterest = document.getElementById("mortgageInterest");
+var mortgageTerm = document.getElementById("mortgageTerm");
+var mortgageSubmit = document.getElementById("mortgageSubmit");
+var mortgageOutput = document.getElementById("mortgageOutput");
+
+mortgageSubmit.onclick = function mortgage()
+{
+	if (mortgageAmount.value < 0 || mortgageInterest.value < 0 || mortgageTerm.value < 0)
+	{
+		alert("All values must be greater than 0");
+	}
+	else
+	{
+		mortgageOutput.innerHTML = (((mortgageInterest.value/10) * mortgageTerm.value + mortgageAmount.value / mortgageTerm.value) / 12).toFixed(2);
+	}
+}
+
+
