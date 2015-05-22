@@ -16,9 +16,9 @@ piInput.oninput = function piCount()
 {
 	
 	if (piInput.value > 0 && piInput.value < 101)
-		piOutput.value = "3." + pi.substring(0,piInput.value);
+		piOutput.innerHTML = "3." + pi.substring(0,piInput.value);
 	else
-		piOutput.value = "n must be a number between 1 and 100";
+		piOutput.innerHTML = "n must be a number between 1 and 100";
 	
 };
 
@@ -32,9 +32,9 @@ eInput.oninput = function eCount()
 {
 	
 	if (eInput.value > 0 && eInput.value < 101)
-		eOutput.value = "2." + e.substring(0,eInput.value);
+		eOutput.innerHTML = "2." + e.substring(0,eInput.value);
 	else
-		eOutput.value = "n must be a number between 1 and 100";
+		eOutput.innerHTML = "n must be a number between 1 and 100";
 	
 };
 
@@ -69,11 +69,11 @@ fibInput.oninput = function fib()
 			} while (s < n);
 		};
 		
-		fibOutput.value = seq;
+		fibOutput.innerHTML = seq;
 	}
 	else
 	{
-		fibOutput.value = "n must be a number between 1 and 10,000";
+		fibOutput.innerHTML = "n must be a number between 1 and 10,000";
 	};
 };
 
@@ -88,11 +88,11 @@ primeInput.oninput = function prime()
 	
 	if (primeInput.value > 0 && primeInput.value < 100000001)
 	{
-		primeOutput.value = primeFactorization(primeInput.value);
+		primeOutput.innerHTML = primeFactorization(primeInput.value);
 	}
 	else
 	{
-		primeOutput.value = "n must be a number between 1 and 100,000,000";
+		primeOutput.innerHTML = "n must be a number between 1 and 100,000,000";
 	};
 };
 
