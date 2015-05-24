@@ -184,4 +184,27 @@ mortgageSubmit.onclick = function mortgage()
 	}
 }
 
+var changeSubmit = document.getElementById("changeSubmit");
 
+changeSubmit.onclick = function change()
+{	
+	var changeCost = document.getElementById("changeCost");
+	var changeMoney = document.getElementById("changeMoney");
+	var changeDollars = document.getElementById("changeDollars");
+	var changeQuarters = document.getElementById("changeQuarters");
+	var changeDimes = document.getElementById("changeDimes");
+	var changeNickels = document.getElementById("changeNickels");
+	var changePennies = document.getElementById("changePennies");
+    
+    changeCost.value = (changeCost.value * 1).toFixed(2);  //*1 added, otherwise it attempts to execute changeCost.value.toFixed() -- not a function
+    changeMoney.value = (changeMoney.value * 1).toFixed(2);
+
+	if (changeCost.value > changeMoney.value)
+	{
+		alert("Money given must be more than the cost.");
+	}
+	else
+	{
+        //Add code
+	}
+}
