@@ -205,6 +205,20 @@ changeSubmit.onclick = function change()
 	}
 	else
 	{
-        //Add code
+		var c = changeMoney.value - changeCost.value;
+		
+		changeDollars.innerHTML = c - c % 1;
+		
+		c = (c - changeDollars.innerHTML).toFixed(2);
+		changeQuarters.innerHTML = (c - c % 0.25) * 4;
+		
+		c = (c - changeQuarters.innerHTML * 0.25).toFixed(2);
+		changeDimes.innerHTML = (c - c % 0.1) * 10;
+		
+		c = (c - changeDimes.innerHTML * 0.1).toFixed(2);
+		changeNickels.innerHTML = (c - c % 0.05) * 20;
+		
+		c = (c - changeNickels.innerHTML * 0.05).toFixed(2);
+		changePennies.innerHTML = (c - c % 0.01) * 100;
 	}
 }
