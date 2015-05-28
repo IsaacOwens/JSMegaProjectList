@@ -5,6 +5,28 @@ function testAlert()
 	
 };
 
+/* restrictCharacters code from qodo.co.uk */
+var digitsOnly = /[1234567890]/g;
+var floatOnly = /[0-9\.]/g;
+var alphaOnly = /[A-Za-z]/g;
+var binaryOnly = /[10]/g;
+
+function restrictCharacters(myfield, e, restrictionType) {
+	if (!e) var e = window.event
+	if (e.keyCode) code = e.keyCode;
+	else if (e.which) code = e.which;
+	var character = String.fromCharCode(code);
+	if (code==27) { this.blur(); return false; }
+	if (!e.ctrlKey && code!=9 && code!=8 && code!=36 && code!=37 && code!=38 && (code!=39 || (code==39 && character=="'")) && code!=40) {
+		if (character.match(restrictionType)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+}
+
+
 /***********NUMBERS*************/
 
 /*Find PI to the Nth Digit*/
@@ -184,6 +206,7 @@ mortgageSubmit.onclick = function mortgage()
 	}
 }
 
+/*Change return*/
 var changeSubmit = document.getElementById("changeSubmit");
 
 changeSubmit.onclick = function change()
@@ -199,9 +222,9 @@ changeSubmit.onclick = function change()
     changeCost.value = (changeCost.value * 1).toFixed(2);  //*1 added, otherwise it attempts to execute changeCost.value.toFixed() -- not a function
     changeMoney.value = (changeMoney.value * 1).toFixed(2);
 
-	if (changeCost.value > changeMoney.value)
+	if (parseInt(changeCost.value) > parseInt(changeMoney.value))
 	{
-		alert("Money given must be more than the cost.");
+		alert("Money given must be more than the cost. /n cost: " + changeCost.value + "/n money: " + changeMoney.value);
 	}
 	else
 	{
@@ -221,4 +244,19 @@ changeSubmit.onclick = function change()
 		c = (c - changeNickels.innerHTML * 0.05).toFixed(2);
 		changePennies.innerHTML = (c - c % 0.01) * 100;
 	}
+}
+
+
+/*Binary to Decimal and Decimal to Binary*/
+var btdBinary = document.getElementById("btdBinary");
+var btdDecimal = document.getElementById("btdDecimal");
+
+btdBinary.oninput = function binaryToDec ()
+{
+	btdDecimal.value = parseInt(btdBinary.value, 2);
+}
+
+btdDecimal.oninput = function decToBinary ()
+{
+	btdBinary.value = (btdDecimal.value >>> 0).toString(2);
 }
