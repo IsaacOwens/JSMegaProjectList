@@ -224,7 +224,7 @@ changeSubmit.onclick = function change()
 
 	if (parseInt(changeCost.value) > parseInt(changeMoney.value))
 	{
-		alert("Money given must be more than the cost. /n cost: " + changeCost.value + "/n money: " + changeMoney.value);
+		alert("Money given must be more than the cost.");
 	}
 	else
 	{
@@ -259,4 +259,24 @@ btdBinary.oninput = function binaryToDec ()
 btdDecimal.oninput = function decToBinary ()
 {
 	btdBinary.value = (btdDecimal.value >>> 0).toString(2);
+}
+
+/*Calculator*/
+var calcInput = document.getElementById("calcInput");
+var calcSubmit = document.getElementById("calcSubmit");
+
+calcSubmit.onclick = function calculator ()
+{
+	var result;
+	
+	try
+	{
+		result = eval(calcInput.value);
+	}
+	catch (e)
+	{
+		result = "Error";
+	}
+	
+	calcInput.value = result;
 }
